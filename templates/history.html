@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <td>Symbol</td>
+                <td>Shares</td>
+                <td>Transacted</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for histo in hist %}
+                <tr>
+                    <td>{{histo.symbol}}</td>
+                    <td>{{histo.shares}}</td>
+                    <td>{{histo.dtime}}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+
+        <tb>
+        </tb>
+    </table>
+{% endblock %}

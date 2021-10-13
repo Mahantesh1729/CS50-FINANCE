@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <div class = >
+
+
+    </div>
+
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <td>Symbol</td>
+                <td>Name</td>
+                <td>Shares</td>
+                <td>Price</td>
+                <td>TOTAL</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for owned in owns %}
+                <tr>
+                    <td>{{owned.symbol}}</td>
+                    <td>{{owned.name}}</td>
+                    <td>{{owned.shares}}</td>
+                    <td>{{owned.price | usd()}}</td>
+                    <td>{{owned.total | usd()}}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>Cash</td>
+                <td colspan = "3"></td>
+                <td>{{cash | usd}}</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>${{total}}</td>
+            </tr>
+        </tfoot>
+
+        <tb>
+        </tb>
+    </table>
+{% endblock %}
